@@ -31,15 +31,15 @@ class ContactoController extends Controller
             //Server settings
             $mail->SMTPDebug = 0;                           // 2: debug, 0: sin mensajes de error
             $mail->isSMTP();                                      // usamos SMTP
-            $mail->Host = 'smtp.gmail.com';  // servidor de correo SMTP, de gmail por ejemplo
+            $mail->Host = getenv('MAIL_HOST');  // servidor de correo SMTP, de gmail por ejemplo
             $mail->SMTPAuth = true;                               // Habilitamos autenticación SMTP
-            $mail->Username = 'carolinaaa.0312@gmail.com';                 // SMTP cuenta
-            $mail->Password = 'yrzjuexwbxopewvn';                           // SMTP clave
-            $mail->SMTPSecure = 'tls';                            // Habilitamos encriptación TLS/SSL
-            $mail->Port = 587;                                    // el puerto TCP ( puedes verlo en tu servidor de correo)
+            $mail->Username = getenv('MAIL_USERNAME');                 // SMTP cuenta
+            $mail->Password = getenv('MAIL_PASSWORD');                           // SMTP clave
+            $mail->SMTPSecure = getenv('MAIL_ENCRYPTION');                           // Habilitamos encriptación TLS/SSL
+            $mail->Port = getenv('MAIL_PORT');                                    // el puerto TCP ( puedes verlo en tu servidor de correo)
 
             //Recipients
-            $mail->addAddress( 'carolinaaa.0312@gmail.com' , 'empresa');     // Add a recipient
+            $mail->addAddress( getenv('MAIL_USERNAME') , getenv('APP_NAME'));     // Add a recipient
             
             //Content
             $mail->isHTML(true);                                  // El mensaje es en HTML

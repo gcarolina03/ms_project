@@ -16,13 +16,14 @@ class UsersController extends Controller
         $this->middleware('auth');
     }
 
-    /*-------------------VISTA PRINCIPAL--------------------*/
+    /*-------------------VISTA PRINCIPAL (LISTADO DE USUARIOS)--------------------*/
     public function index(Request $request)
     {
         $request->user()->authorizeRoles(['Administrador']);
+
         //1. Llamamos al modelo para pedir los registros de todas los usuarios con sus roles
         $users = User::with('roles')->get();
-    
+
         //2. Devolvemos la vista al usuario pasándole como parámetro los datos anteriores
         return view('users.index', ['users' => $users]);
     }
@@ -31,8 +32,10 @@ class UsersController extends Controller
     public function edit($id, Request $request)
     {
         $request->user()->authorizeRoles(['Administrador']);
-        //Localizamos el usuario por su id pasado como parámetro
+        
+        //Localizamos todos los roles
         $roles = Role::all();
+        //Localizamos el usuario por su id pasado como parámetro
         $user = User::where('id', $id)->with('roles')->first();
 
         //Mostramos la vista editar.blade.php

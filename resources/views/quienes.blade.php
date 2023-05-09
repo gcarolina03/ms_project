@@ -13,9 +13,10 @@
                         <p class="text-muted">Student</p>
                     </div>
                     <div class="social py-4 ">
-                        <a href="https://www.instagram.com/g_carolina03/"><img class="btn btn-social mx-2" src="{{ asset('images/svg/instagram.svg')}}"/></a>
-                        <a href="https://www.facebook.com/gcarolina03/"><img class="btn btn-social mx-2" src="{{ asset('images/svg/facebook.svg')}}"/></a>
-                        <a href="https://www.linkedin.com/in/gloria-carolina-hernandez/"><img class="btn btn-social mx-1" src="{{ asset('images/svg/linkedin.svg')}}"/></a>
+                        <a href="https://www.instagram.com/gcarolina03/"><img class="btn btn-social mx-2" src="{{ asset('images/svg/instagram.svg') }}"/></a>
+                        <a href="https://www.facebook.com/gcarolina03/"><img class="btn btn-social mx-2" src="{{ asset('images/svg/facebook.svg') }}"/></a>
+                        <a href="https://www.linkedin.com/in/gloria-carolina-hernandez/"><img class="btn btn-social mx-1" src="{{ asset('images/svg/linkedin.svg') }}"/></a>
+                        <a href="https://github.com/gcarolina03"><img class="btn btn-social mx-1" src="{{ asset('images/svg/github.svg') }}"/></a>
                     </div>
                 </div>
             </div>
