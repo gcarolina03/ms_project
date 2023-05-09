@@ -29,6 +29,7 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($incidents as $incident) 
+                                        @if($incident->user->name === Auth::user()->name || auth()->user()->hasAnyRole(['Administrador', 'Supervisor', 'Tecnico']))
                                             <tr>
                                                 <td>{{ $incident->id }}</td>
                                                 <td><img src="{{ asset('storage/avatars/'.$incident->user->urlavatar) }}" width="32" height="32" class="rounded-circle"></td>
@@ -65,6 +66,7 @@
                                                     </td>
                                                 @endif
                                             </tr>
+                                        @endif
                                         @endforeach
                                     </tbody>
                                 </table>

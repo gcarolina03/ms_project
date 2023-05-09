@@ -32,7 +32,7 @@
                             </div>
                         </div>
                         <hr class="my-1"/>
-                        <form action="perfil" method="post" enctype="multipart/form-data">
+                        <form action=" {{route('perfil.update_avatar')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="form-group col-md-7">
